@@ -1,0 +1,343 @@
+.kcalRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-3);
+}
+
+.kcalLabel {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+}
+
+.kcalValue {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.kcalValue b {
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.kcalUnit {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.kcalSide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  font-size: var(--fs-aux);
+}
+
+.kcalTarget {
+  color: var(--text-3);
+}
+
+.kcalLeft {
+  color: var(--c-diet);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.kcalOver {
+  color: var(--danger);
+}
+
+/* ── 饮水 ─────────────────────────────────────────────────────── */
+
+.waterCount {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.cups {
+  display: flex;
+  gap: 6px;
+}
+
+.cup {
+  flex: 1;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--bg-sub);
+  padding: 3px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.cup:hover {
+  border-color: var(--c-diet);
+}
+
+.cupFill {
+  display: block;
+  width: 100%;
+  height: 0;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--c-diet) 70%, transparent);
+  transition: height 0.16s ease;
+}
+
+.cupOn .cupFill {
+  height: 100%;
+}
+
+.waterHint {
+  margin-top: var(--sp-2);
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+
+/* ── 四餐 ─────────────────────────────────────────────────────── */
+
+.mealGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-3);
+}
+
+@media (max-width: 720px) {
+  .mealGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mealCard {
+  min-width: 0;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--sp-2);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  height: 26px;
+  font-size: var(--fs-aux);
+}
+
+.itemName {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemAmount {
+  color: var(--text-3);
+  font-size: 11.5px;
+}
+
+.itemKcal {
+  width: 46px;
+  text-align: right;
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.itemDel {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  color: var(--text-3);
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0;
+}
+
+.item:hover .itemDel {
+  opacity: 1;
+}
+
+.itemDel:hover {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.mealEmpty {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+  margin-bottom: var(--sp-2);
+}
+
+.addRow {
+  display: flex;
+  gap: 4px;
+}
+
+.addRow .input {
+  height: 30px;
+  font-size: 11.5px;
+  padding: 0 8px;
+}
+
+.addName {
+  flex: 1;
+  min-width: 0;
+}
+
+.addAmount {
+  width: 62px;
+}
+
+.addKcal {
+  width: 58px;
+}
+
+.mealFoot {
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+/* ── 购物清单 ─────────────────────────────────────────────────── */
+
+.shopAdd {
+  display: flex;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+
+.shopAdd .input {
+  height: 30px;
+}
+
+.shopList {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  height: 30px;
+  font-size: var(--fs-aux);
+}
+.shopCheck {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  cursor: pointer;
+}
+.shopCheck input {
+  accent-color: var(--c-diet);
+}
+
+.shopDone {
+  color: var(--text-3);
+  text-decoration: line-through;
+}
+
+.shopDel {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  color: var(--text-3);
+  font-size: 14px;
+  opacity: 0;
+}
+
+.shopRow:hover .shopDel {
+  opacity: 1;
+}
+
+.shopDel:hover {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+/* ── 体重 ─────────────────────────────────────────────────────── */
+
+.weightRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+}
+
+.weightValue {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.weightValue b {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+
+.weightDate {
+  font-size: 11.5px;
+  color: var(--text-3);
+  margin-left: var(--sp-2);
+}
+
+.weightEmpty {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+}
+
+.weightChart {
+  width: 46%;
+  max-width: 260px;
+}
+
+/* ── 食物库 ───────────────────────────────────────────────────── */
+
+.foodChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.foodChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 26px;
+  padding: 0 4px 0 10px;
+  border-radius: var(--r-full);
+  background: var(--bg-sub);
+  font-size: 11.5px;
+  color: var(--text-2);
+}
+
+.foodChip em {
+  font-style: normal;
+  color: var(--text-3);
+  font-size: 10.5px;
+}
+
+.foodChip button {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  color: var(--text-3);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.foodChip button:hover {
+  background: var(--danger-soft);
+  color: var(--danger);
+}

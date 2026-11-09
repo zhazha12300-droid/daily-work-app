@@ -1,0 +1,44 @@
+.modes {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mode {
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--r-full);
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+}
+
+.mode:hover {
+  background: var(--bg-hover);
+}
+
+.modeOn {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.tip {
+  margin-left: auto;
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+
+.input {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r);
+  background: var(--bg);
+  font-size: 15px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--accent);
+}

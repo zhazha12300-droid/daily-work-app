@@ -1,0 +1,21 @@
+.text {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.toggle {
+  margin-top: 2px;
+  font-size: var(--fs-aux);
+  color: var(--accent);
+}
+
+.toggle:hover {
+  text-decoration: underline;
+}

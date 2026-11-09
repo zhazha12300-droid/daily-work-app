@@ -1,0 +1,44 @@
+{
+  "name": "daily-work-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "个人工作生活台 —— 仅本机浏览器使用的私人工作台",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhazha12300-droid/daily-work-app.git"
+  },
+  "homepage": "https://github.com/zhazha12300-droid/daily-work-app",
+  "bugs": "https://github.com/zhazha12300-droid/daily-work-app/issues",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "start": "node tools/serve.mjs",
+    "test": "vitest run --pool=threads"
+  },
+  "dependencies": {
+    "date-fns": "^4.4.0",
+    "dexie": "^4.4.7",
+    "dexie-react-hooks": "^4.4.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "fake-indexeddb": "^6.2.6",
+    "happy-dom": "^21.0.4",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

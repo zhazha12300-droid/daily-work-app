@@ -1,0 +1,337 @@
+.seg {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: var(--r-sm);
+  background: var(--bg-sub);
+}
+
+.segBtn {
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 4px;
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.segBtn:hover {
+  color: var(--text-1);
+}
+
+.segOn {
+  background: var(--bg-elev);
+  color: var(--text-1);
+  box-shadow: var(--shadow-1);
+  font-weight: 600;
+}
+
+.segCount {
+  font-size: 10px;
+  color: var(--text-3);
+  background: var(--bg-sub);
+  border-radius: var(--r-full);
+  padding: 0 5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.segOn .segCount {
+  color: var(--c-game);
+}
+
+/* ── 周统计 ───────────────────────────────────────────────────── */
+
+.weekRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+}
+
+.weekValue {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: none;
+}
+
+.weekValue b {
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: var(--c-game);
+}
+
+.weekUnit {
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+
+.chart {
+  flex: 1;
+  min-width: 0;
+  max-width: 420px;
+}
+
+/* ── 新增 ─────────────────────────────────────────────────────── */
+
+.addBar {
+  display: flex;
+  gap: var(--sp-2);
+  margin: var(--sp-3) 0;
+}
+
+/* 名字/标题输入占据剩余宽度；没有它时会被右侧固定宽的控件挤成一个圆点 */
+.addName {
+  flex: 1;
+  min-width: 0;
+}
+
+.addPlatform,
+.addType {
+  /* 用非 auto 的 flex-basis 定宽：它压过全局 .input 的 width:100%，
+     否则这个下拉会撑满整行，把左边的名字输入挤到几乎看不见。 */
+  flex: 0 0 108px;
+  width: 108px;
+  min-width: 0;
+}
+
+/* ── 游戏列表 ─────────────────────────────────────────────────── */
+
+.group {
+  margin-bottom: var(--sp-3);
+}
+
+.groupCount {
+  font-size: 11px;
+  color: var(--text-3);
+  background: var(--bg-sub);
+  border-radius: var(--r-full);
+  padding: 0 6px;
+  margin-left: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 40px;
+  padding: 0 var(--sp-2);
+  margin: 0 calc(var(--sp-2) * -1);
+  border-radius: var(--r-sm);
+}
+
+.row:hover {
+  background: var(--bg-hover);
+}
+
+.gameName {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 1px;
+  flex: none;
+}
+
+.star {
+  font-size: 12px;
+  line-height: 1;
+  color: var(--border-strong);
+  padding: 2px;
+}
+
+.star:hover {
+  color: var(--c-game);
+}
+
+.starOn {
+  color: var(--c-game);
+}
+
+.minutes {
+  width: 84px;
+  flex: none;
+  text-align: right;
+  font-size: 11.5px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.logBtn {
+  height: 24px;
+  font-size: 11px;
+  flex: none;
+}
+
+/* ── 娱乐清单 ─────────────────────────────────────────────────── */
+
+.watchList {
+  display: flex;
+  flex-direction: column;
+}
+
+.watchRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 32px;
+  font-size: var(--fs-body);
+}
+
+.watchCheck {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  cursor: pointer;
+  min-width: 0;
+}
+
+.watchCheck input {
+  accent-color: var(--c-game);
+}
+
+.watchCheck span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.watchDone {
+  color: var(--text-3);
+  text-decoration: line-through;
+}
+
+.watchDate {
+  font-size: 11px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.del {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  color: var(--text-3);
+  font-size: 14px;
+  flex: none;
+  opacity: 0;
+}
+
+.row:hover .del,
+.watchRow:hover .del,
+.recent li:hover .del {
+  opacity: 1;
+}
+
+.del:hover {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+/* ── 弹窗内部 ─────────────────────────────────────────────────── */
+
+.modalRow {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.field > span {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.textarea {
+  min-height: 68px;
+  padding: 8px 10px;
+  line-height: 1.5;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.quick {
+  display: flex;
+  gap: 5px;
+}
+
+.quickBtn {
+  height: 24px;
+  padding: 0 10px;
+  border-radius: var(--r-full);
+  background: var(--bg-sub);
+  font-size: 11px;
+  color: var(--text-2);
+}
+
+.quickBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text-1);
+}
+
+.recent {
+  border-top: 1px dashed var(--border);
+  padding-top: var(--sp-2);
+}
+
+.recentTitle {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 4px;
+}
+
+.recent ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent li {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  height: 24px;
+  font-size: 11.5px;
+}
+
+.recentDate {
+  width: 42px;
+  flex: none;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.recentMin {
+  width: 62px;
+  flex: none;
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.recentNote {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-3);
+}

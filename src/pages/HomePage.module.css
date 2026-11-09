@@ -1,0 +1,167 @@
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-3);
+}
+
+.hello {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-shadow: 0 2px 30px rgba(255, 255, 255, 0.16);
+}
+
+.date {
+  margin-top: 6px;
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+}
+
+.weekRange {
+  color: var(--text-3);
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+.taskList {
+  margin-top: var(--sp-3);
+  margin-left: calc(var(--sp-4) * -1);
+  margin-right: calc(var(--sp-4) * -1);
+  margin-bottom: calc(var(--sp-4) * -1);
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+}
+
+.emptyHint {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+  padding: var(--sp-3) 0;
+}
+
+.memoAdd {
+  margin-bottom: var(--sp-3);
+}
+
+.memos {
+  display: flex;
+  flex-direction: column;
+}
+
+.memo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: var(--fs-aux);
+}
+
+.memo:last-child {
+  border-bottom: 0;
+}
+
+.memoText {
+  flex: 1;
+  min-width: 0;
+  color: var(--text-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.memoActions {
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.memo:hover .memoActions,
+.memo:focus-within .memoActions {
+  opacity: 1;
+}
+
+.memoBtn {
+  height: 22px;
+  padding: 0 7px;
+  border-radius: var(--r-sm);
+  color: var(--text-3);
+  font-size: 11.5px;
+}
+
+.memoBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+/* ── 六张摘要卡 ───────────────────────────────────────────────── */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-3);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-lg);
+  background: linear-gradient(135deg, var(--glass-bg-strong), var(--glass-bg-soft));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  box-shadow: var(--shadow-1), var(--shadow-glow);
+  text-align: left;
+  transition:
+    transform 0.35s var(--ease-spring),
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: var(--glass-border-strong);
+  box-shadow: var(--shadow-2), var(--shadow-glow);
+}
+
+.cardLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+}
+
+.cardDot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--r-full);
+  background: var(--card-accent);
+  box-shadow: 0 0 8px var(--card-accent);
+}
+
+.cardValue {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+.cardHint {
+  font-size: 11.5px;
+  color: var(--text-3);
+}

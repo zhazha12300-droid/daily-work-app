@@ -1,0 +1,200 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-4) var(--sp-5) var(--sp-5);
+  background: var(--bg);
+  overflow-y: auto;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  color: var(--text-3);
+  font-size: var(--fs-aux);
+}
+
+.date {
+  font-variant-numeric: tabular-nums;
+}
+
+.timer {
+  margin-left: auto;
+  font-family: var(--font-num);
+  font-size: 15px;
+  color: var(--text-2);
+}
+
+.close {
+  height: 28px;
+  padding: 0 12px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--border);
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+}
+
+.progressLine {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin: var(--sp-3) 0 var(--sp-5);
+}
+
+.progressTrack {
+  flex: 1;
+  height: 4px;
+  border-radius: var(--r-full);
+  background: var(--bg-sub);
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--c-fitness);
+  transition: width 0.2s ease;
+}
+
+.progressText {
+  font-size: 11.5px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  text-align: center;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.exIndex {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+}
+
+.exName {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.setIndex {
+  font-size: 15px;
+  color: var(--text-2);
+}
+
+.inputs {
+  display: flex;
+  gap: var(--sp-3);
+  margin: var(--sp-4) 0 var(--sp-3);
+  width: 100%;
+  max-width: 360px;
+}
+
+.inputBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.inputBox span {
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+
+.inputBox input {
+  height: 46px;
+  padding: 0 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r);
+  background: var(--bg-elev);
+  font-size: 20px;
+  font-family: var(--font-num);
+  text-align: center;
+  outline: none;
+}
+
+.inputBox input:focus {
+  border-color: var(--c-fitness);
+}
+
+.completeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  width: 100%;
+  max-width: 360px;
+  height: 52px;
+  border-radius: var(--r);
+  background: var(--c-fitness);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.completeBtn:active {
+  transform: scale(0.99);
+}
+
+.kbd {
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.22);
+  font-family: var(--font-num);
+}
+
+.secondary {
+  display: flex;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+}
+
+.done {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  text-align: center;
+}
+
+.doneTitle {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.doneHint {
+  color: var(--text-2);
+  font-size: var(--fs-body);
+}
+
+.noteInput {
+  width: 100%;
+  max-width: 360px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--bg-elev);
+  outline: none;
+}
+
+.noteInput:focus {
+  border-color: var(--c-fitness);
+}

@@ -1,0 +1,36 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: 10px var(--sp-4);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--warn);
+  border-radius: var(--r);
+  background: var(--bg-elev);
+}
+
+.text {
+  font-size: var(--fs-body);
+  color: var(--text);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.count {
+  font-size: 16px;
+  color: var(--warn);
+  font-variant-numeric: tabular-nums;
+}
+
+.hint {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+}
+
+.actions {
+  display: flex;
+  gap: var(--sp-2);
+  flex: none;
+}

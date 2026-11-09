@@ -1,0 +1,504 @@
+/* 通用组件的样式集合（CSS Modules，只服务 src/components） */
+
+/* ── Card ─────────────────────────────────────────────────────── */
+.card {
+  background: linear-gradient(135deg, var(--glass-bg-strong), var(--glass-bg-soft));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-1), var(--shadow-glow);
+  padding: var(--sp-5);
+  transition:
+    transform 0.4s var(--ease-spring),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease,
+    background 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px) scale(1.008);
+  box-shadow: var(--shadow-2), var(--shadow-glow);
+  border-color: var(--glass-border-strong);
+}
+
+.dashed {
+  background: transparent;
+  border-style: dashed;
+  box-shadow: none;
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+
+.cardTitle {
+  font-size: var(--fs-section);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.flush {
+  padding: 0;
+}
+
+/* ── PageHeader ───────────────────────────────────────────────── */
+.pageHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-2);
+}
+
+.pageTitle {
+  font-size: var(--fs-title);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.pageSub {
+  margin-top: var(--sp-1);
+  color: var(--text-2);
+  font-size: var(--fs-aux);
+}
+
+.pageActions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex: none;
+}
+
+/* ── Badge ────────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 9px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg-soft);
+  color: var(--text-2);
+  font-size: var(--fs-aux);
+  white-space: nowrap;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--r-full);
+  background: var(--badge-color, var(--accent));
+}
+
+/* ── ProgressBar ──────────────────────────────────────────────── */
+.progressTrack {
+  position: relative;
+  height: 8px;
+  border-radius: var(--r-full);
+  background: var(--glass-bg-soft);
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: var(--r-full);
+  background: var(--progress-color, var(--accent));
+  transition: width 0.25s ease;
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.progressLabel {
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── EmptyState ───────────────────────────────────────────────── */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-6) var(--sp-4);
+  text-align: center;
+}
+
+.emptyTitle {
+  font-size: var(--fs-body);
+  color: var(--text-2);
+}
+
+.emptyHint {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+  max-width: 34em;
+}
+
+.emptyAction {
+  margin-top: var(--sp-2);
+}
+
+/* ── DateStepper ──────────────────────────────────────────────── */
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-full);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.stepBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--r-full);
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.stepBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.stepDate {
+  min-width: 118px;
+  text-align: center;
+  font-size: var(--fs-body);
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+}
+
+.stepToday {
+  height: 24px;
+  padding: 0 10px;
+  margin-left: 2px;
+  border-radius: var(--r-full);
+  color: var(--accent);
+  font-size: var(--fs-aux);
+  background: var(--accent-soft);
+}
+
+.stepToday:hover {
+  filter: brightness(0.97);
+}
+
+/* ── MiniBars ─────────────────────────────────────────────────── */
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 56px;
+}
+
+.barCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bar {
+  width: 100%;
+  min-height: 2px;
+  border-radius: 3px 3px 0 0;
+  background: var(--bar-color, var(--accent));
+  opacity: 0.85;
+}
+
+.barLabel {
+  font-size: 10.5px;
+  color: var(--text-3);
+  line-height: 1;
+}
+
+/* ── InlineEdit ───────────────────────────────────────────────── */
+.editTrigger {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border-radius: var(--r-sm);
+  padding: 2px 4px;
+  margin: -2px -4px;
+  min-height: 24px;
+  cursor: text;
+}
+
+.editTrigger:hover {
+  background: var(--bg-hover);
+}
+
+.editPlaceholder {
+  color: var(--text-3);
+}
+
+.editInput,
+.editTextarea {
+  width: 100%;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  border: 1px solid var(--accent);
+  border-radius: var(--r-sm);
+  background: var(--bg-elev);
+  outline: none;
+  resize: none;
+  line-height: inherit;
+}
+
+.editInput {
+  height: 26px;
+}
+
+/* ── RowMenu ──────────────────────────────────────────────────── */
+.menuWrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.menuTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--r-sm);
+  color: var(--text-3);
+  opacity: 0;
+  transition:
+    opacity 0.12s ease,
+    background 0.12s ease;
+}
+
+.menuTrigger:focus-visible,
+.menuWrap:hover .menuTrigger,
+.menuTriggerOpen {
+  opacity: 1;
+}
+
+.menuList {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  z-index: 40;
+  min-width: 132px;
+  padding: 4px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r);
+  background: var(--glass-bg-strong);
+  -webkit-backdrop-filter: blur(18px) saturate(var(--glass-saturate));
+  backdrop-filter: blur(18px) saturate(var(--glass-saturate));
+  box-shadow: var(--shadow-2);
+}
+
+.menuItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+  font-size: var(--fs-aux);
+  color: var(--text);
+}
+
+.menuItem:hover {
+  background: var(--bg-hover);
+}
+
+.menuItemDanger {
+  color: var(--danger);
+}
+
+/* ── Modal / DangerConfirm ────────────────────────────────────── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-5);
+  background: rgba(10, 14, 28, 0.4);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  backdrop-filter: blur(10px) saturate(1.2);
+}
+
+.modal {
+  width: min(520px, 100%);
+  max-height: 84vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(160deg, var(--glass-bg-strong), var(--glass-bg));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-2), var(--shadow-glow);
+  overflow: hidden;
+}
+
+/* 弹窗打开时焦点落在对话框本身（tabIndex=-1），这样 Tab 从里面开始走、
+   键盘用户不会被丢回页面顶部；容器自己不该画焦点框 */
+.modal:focus {
+  outline: none;
+}
+
+.modalHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-4) var(--sp-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.modalTitle {
+  font-size: var(--fs-section);
+  font-weight: 600;
+}
+
+.modalClose {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--r-sm);
+  color: var(--text-3);
+}
+
+.modalClose:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.modalBody {
+  padding: var(--sp-4);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.modalFoot {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-top: 1px solid var(--border);
+  background: var(--bg-sub);
+}
+
+.dangerText {
+  color: var(--danger);
+}
+
+.dangerInput {
+  width: 100%;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--glass-border-strong);
+  border-radius: var(--r-sm);
+  background: var(--glass-bg-soft);
+  outline: none;
+}
+
+.dangerInput:focus {
+  border-color: var(--danger);
+}
+
+/* ── Toast ────────────────────────────────────────────────────── */
+.toastWrap {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-width: 240px;
+  max-width: 520px;
+  padding: 9px 12px 9px 14px;
+  border-radius: var(--r);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg-strong);
+  -webkit-backdrop-filter: blur(18px) saturate(var(--glass-saturate));
+  backdrop-filter: blur(18px) saturate(var(--glass-saturate));
+  box-shadow: var(--shadow-2);
+  font-size: var(--fs-aux);
+  color: var(--text);
+  pointer-events: auto;
+  animation: toastIn 0.16s ease-out;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.toastMsg {
+  flex: 1;
+  min-width: 0;
+}
+
+.toastAction {
+  flex: none;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: var(--r-sm);
+  color: var(--accent);
+  font-weight: 600;
+  background: var(--accent-soft);
+}
+
+.toastError {
+  border-color: var(--danger);
+}
+
+.toastError .toastAction {
+  color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.toastSuccess {
+  border-color: var(--ok);
+}

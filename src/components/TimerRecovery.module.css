@@ -1,0 +1,36 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.label {
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.inputRow .input {
+  width: 120px;
+}
+
+.unit {
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+}
+
+.hint {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+}

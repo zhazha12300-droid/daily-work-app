@@ -1,0 +1,429 @@
+/* ── 待跟进横条 ───────────────────────────────────────────────── */
+
+.followBar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 8px var(--sp-4);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--c-consult);
+  border-radius: var(--r);
+  background: var(--bg-elev);
+}
+
+.followLabel {
+  flex: none;
+  font-size: var(--fs-aux);
+  font-weight: 600;
+  color: var(--c-consult);
+}
+
+.followList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.followChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--border);
+  background: var(--bg-sub);
+  font-size: 11.5px;
+  color: var(--text);
+}
+
+.followChip:hover {
+  background: var(--bg-hover);
+}
+
+.followDue {
+  color: var(--warn);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 左栏 ─────────────────────────────────────────────────────── */
+
+.search {
+  height: 30px;
+  margin-bottom: var(--sp-2);
+  font-size: var(--fs-aux);
+}
+
+.statusTabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.statusTab {
+  height: 22px;
+  padding: 0 8px;
+  border-radius: var(--r-full);
+  font-size: 11px;
+  color: var(--text-3);
+  background: var(--bg-sub);
+}
+
+.statusOn {
+  color: var(--text);
+  background: var(--bg-active);
+  font-weight: 600;
+}
+
+.sideEmpty {
+  padding: var(--sp-3) var(--sp-2);
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+}
+
+.clientList {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.clientItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  width: 100%;
+  height: 32px;
+  padding: 0 var(--sp-2);
+  border-radius: var(--r-sm);
+  color: var(--text-2);
+  font-size: var(--fs-aux);
+  text-align: left;
+}
+
+.clientItem:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.clientOn {
+  background: var(--bg-active);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.clientName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clientBadge {
+  flex: none;
+  font-size: 10.5px;
+  padding: 1px 6px;
+  border-radius: var(--r-full);
+  color: var(--text-3);
+  background: var(--bg-sub);
+}
+
+.cs_lead {
+  color: var(--text-3);
+}
+
+.cs_active {
+  color: var(--c-consult);
+  background: color-mix(in srgb, var(--c-consult) 12%, transparent);
+}
+
+.cs_closed {
+  color: var(--ok);
+  background: color-mix(in srgb, var(--ok) 12%, transparent);
+}
+
+/* ── 客户头 ───────────────────────────────────────────────────── */
+
+.clientHead {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.clientTitle {
+  font-size: 18px;
+  font-weight: 600;
+  min-width: 0;
+}
+
+.pills {
+  display: flex;
+  gap: 4px;
+}
+
+.pill {
+  height: 24px;
+  padding: 0 10px;
+  border-radius: var(--r-full);
+  font-size: 11.5px;
+  color: var(--text-3);
+  background: var(--bg-sub);
+}
+
+.pillOn {
+  color: var(--c-consult);
+  background: color-mix(in srgb, var(--c-consult) 14%, transparent);
+  font-weight: 600;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.metaRow {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) 68px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+  font-size: var(--fs-aux);
+}
+
+.metaLabel {
+  color: var(--text-3);
+}
+
+.noteRow {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+  font-size: var(--fs-aux);
+}
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-top: var(--sp-3);
+  padding-top: var(--sp-3);
+  border-top: 1px dashed var(--border);
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.received {
+  color: var(--ok);
+}
+
+.pending {
+  color: var(--warn);
+}
+
+/* ── Tab ──────────────────────────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.tab {
+  height: 28px;
+  padding: 0 12px;
+  border-radius: var(--r-full);
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+}
+
+.tab:hover {
+  background: var(--bg-hover);
+}
+
+.tabOn {
+  background: var(--bg-active);
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ── 表单 ─────────────────────────────────────────────────────── */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.formRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.input {
+  height: 30px;
+  padding: 0 9px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--bg);
+  font-size: var(--fs-aux);
+  outline: none;
+  min-width: 112px;
+}
+
+.input:focus {
+  border-color: var(--accent);
+}
+
+.grow {
+  flex: 1;
+  min-width: 0;
+}
+
+.formHint {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.textarea {
+  width: 100%;
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--bg);
+  font-size: var(--fs-aux);
+  resize: vertical;
+  outline: none;
+}
+
+.textarea:focus {
+  border-color: var(--accent);
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+  user-select: none;
+}
+
+.empty {
+  padding: var(--sp-4);
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+}
+
+/* ── 时间线 ───────────────────────────────────────────────────── */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-2) var(--sp-4) var(--sp-3);
+}
+
+.logItem {
+  display: flex;
+  gap: var(--sp-3);
+  padding: var(--sp-2) 0;
+}
+
+.logDot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  margin-top: 7px;
+  border-radius: var(--r-full);
+  background: var(--c-consult);
+}
+
+.logBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.logHead {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+
+.logDate {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-2);
+}
+
+.logNext {
+  color: var(--c-consult);
+}
+
+.logTopic {
+  margin-top: 2px;
+  font-size: var(--fs-body);
+}
+
+.logSummary {
+  margin-top: 2px;
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+  white-space: pre-wrap;
+}
+
+/* ── 收款 ─────────────────────────────────────────────────────── */
+
+.payList {
+  display: flex;
+  flex-direction: column;
+}
+
+.payItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 6px var(--sp-4);
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-aux);
+}
+
+.payItem:first-child {
+  border-top: 0;
+}
+
+.payDate {
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+  min-width: 44px;
+}
+
+.payAmount {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.payBadge {
+  height: 20px;
+  padding: 0 8px;
+  border-radius: var(--r-full);
+  font-size: 11px;
+}
+
+.payDone {
+  color: var(--ok);
+  background: color-mix(in srgb, var(--ok) 12%, transparent);
+}
+
+.payWait {
+  color: var(--warn);
+  background: color-mix(in srgb, var(--warn) 14%, transparent);
+}
+
+.footerHint {
+  font-size: 11.5px;
+  color: var(--text-3);
+  text-align: center;
+}

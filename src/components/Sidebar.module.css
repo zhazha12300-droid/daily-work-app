@@ -1,0 +1,199 @@
+.sidebar {
+  flex: 0 0 var(--nav-w);
+  width: var(--nav-w);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-4) var(--sp-3);
+  background: linear-gradient(180deg, var(--glass-bg-strong), var(--glass-bg-soft));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border-right: 1px solid var(--glass-border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 var(--sp-2) var(--sp-5);
+  user-select: none;
+}
+
+.mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, var(--accent), var(--c-media));
+  box-shadow: 0 1px 3px rgba(47, 111, 235, 0.35);
+}
+
+.brandText {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 34px;
+  padding: 0 var(--sp-3);
+  border-radius: 12px;
+  color: var(--text-2);
+  font-size: var(--fs-body);
+  transition:
+    background 0.2s var(--ease-spring),
+    color 0.2s ease,
+    transform 0.2s var(--ease-spring);
+}
+
+.item:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+  transform: translateX(2px);
+}
+
+.active {
+  background: var(--bg-active);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.dot {
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--r-full);
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.active .dot {
+  opacity: 1;
+}
+
+.label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 有逾期选题时导航右侧的小红点 */
+.alert {
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  margin-left: auto;
+  border-radius: var(--r-full);
+  background: var(--danger);
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.backup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--sp-2);
+  height: 26px;
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+}
+
+.timerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  width: 100%;
+  height: 30px;
+  padding: 0 var(--sp-2);
+  margin-bottom: 2px;
+  border-radius: var(--r-sm);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: var(--fs-aux);
+}
+
+.timerDot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--r-full);
+  background: var(--ok);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.timerLabel {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.timerClock {
+  flex: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.stale {
+  color: var(--warn);
+}
+
+.weak {
+  color: var(--text-3);
+}
+
+.footerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  height: 30px;
+  padding: 0 var(--sp-2);
+  border-radius: var(--r-sm);
+  color: var(--text-2);
+  font-size: var(--fs-aux);
+  transition: background 0.12s ease;
+}
+
+.footerBtn:hover {
+  background: var(--bg-hover);
+}
+
+.origin {
+  padding: var(--sp-1) var(--sp-2) 0;
+  font-family: var(--font-num);
+  font-size: 11px;
+  color: var(--text-3);
+  opacity: 0.75;
+  user-select: text;
+}

@@ -1,0 +1,646 @@
+/* ── 视图切换 ─────────────────────────────────────────────────── */
+
+.moreRow {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--sp-2);
+}
+
+.seg {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: var(--r-sm);
+  background: var(--bg-sub);
+}
+
+.segBtn {
+  position: relative;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 4px;
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+}
+
+.segBtn:hover {
+  color: var(--text-1);
+}
+
+.segOn {
+  background: var(--bg-elev);
+  color: var(--text-1);
+  box-shadow: var(--shadow-1);
+  font-weight: 600;
+}
+
+.segDot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 15px;
+  height: 15px;
+  margin-left: 5px;
+  padding: 0 4px;
+  border-radius: var(--r-full);
+  background: var(--danger);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  vertical-align: 1px;
+}
+
+/* ── 统计条 ───────────────────────────────────────────────────── */
+
+.statsCard {
+  margin-bottom: var(--sp-3);
+}
+
+.statRow {
+  display: grid;
+  grid-template-columns: 130px 1fr 1fr;
+  gap: var(--sp-5);
+}
+
+@media (max-width: 900px) {
+  .statRow {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+}
+
+.statLabel {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+  margin-bottom: 2px;
+}
+
+.statValue {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+}
+
+.statValue b {
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: var(--c-media);
+}
+
+.statUnit {
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+
+.statMuted {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+}
+
+.platformBars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.platformBarRow {
+  display: grid;
+  grid-template-columns: 76px 1fr 72px;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 11.5px;
+}
+
+.platformName {
+  color: var(--text-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.platformTrack {
+  height: 5px;
+  border-radius: var(--r-full);
+  background: var(--bg-sub);
+  overflow: hidden;
+}
+
+.platformFill {
+  display: block;
+  height: 100%;
+  border-radius: var(--r-full);
+  background: var(--c-media);
+}
+
+.platformCount {
+  color: var(--text-3);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.topList {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.topList li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  min-width: 0;
+}
+
+.topRank {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  border-radius: 4px;
+  background: var(--bg-sub);
+  color: var(--text-3);
+  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topTitle {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-1);
+}
+
+.topTitle:hover {
+  color: var(--c-media);
+}
+
+.topViews {
+  flex: none;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 新增 ─────────────────────────────────────────────────────── */
+
+.addBar {
+  display: flex;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+
+/* 标题输入占据剩余宽度；没有它时会被右侧固定宽的控件挤成一个圆点 */
+.addName {
+  flex: 1;
+  min-width: 0;
+}
+
+.addPlatform {
+  /* flex-basis 压过全局 .input 的 width:100%，平台框才不会撑满整行 */
+  flex: 0 0 108px;
+  width: 108px;
+  min-width: 0;
+}
+
+/* ── 分组与行 ─────────────────────────────────────────────────── */
+
+.group {
+  margin-bottom: var(--sp-3);
+}
+
+.groupTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font: inherit;
+  color: inherit;
+}
+
+.caret {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--text-3);
+  transition: transform 0.14s ease;
+}
+
+.caretOpen {
+  transform: rotate(90deg);
+}
+
+.groupCount {
+  font-size: 11px;
+  color: var(--text-3);
+  background: var(--bg-sub);
+  border-radius: var(--r-full);
+  padding: 0 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.groupEmpty {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 38px;
+  padding: 0 var(--sp-2);
+  margin: 0 calc(var(--sp-2) * -1);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  font-size: var(--fs-body);
+}
+
+.row:hover {
+  background: var(--bg-hover);
+}
+
+.rowOn {
+  background: var(--bg-active);
+}
+
+.rowTitle {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.planDate {
+  font-size: 11.5px;
+  color: var(--text-3);
+  flex: none;
+}
+
+.late {
+  font-size: 11.5px;
+  color: var(--danger);
+  background: var(--danger-soft);
+  border-radius: var(--r-full);
+  padding: 1px 7px;
+  flex: none;
+  font-weight: 600;
+}
+
+.viewsNum {
+  font-size: 11.5px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+
+.rowTools {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: none;
+}
+
+.advance {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--r-sm);
+  color: var(--text-3);
+  font-size: 13px;
+}
+
+.advance:hover {
+  background: var(--c-media);
+  color: #fff;
+}
+
+.doneMark {
+  font-size: 10.5px;
+  color: var(--text-3);
+  padding: 0 4px;
+}
+
+/* ── 排期 ─────────────────────────────────────────────────────── */
+
+.overdueCard {
+  border-left: 3px solid var(--danger);
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.weekDay {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+}
+
+.dayLabel {
+  width: 46px;
+  flex: none;
+  font-size: 11.5px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+  padding-top: 4px;
+}
+
+.dayToday {
+  color: var(--c-media);
+  font-weight: 700;
+}
+
+.dayItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 100%;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--r-full);
+  background: var(--bg-sub);
+  font-size: 11.5px;
+  color: var(--text-1);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  background: var(--bg-hover);
+}
+
+.pill em {
+  font-style: normal;
+  color: var(--text-3);
+  font-size: 10.5px;
+}
+
+.pillDone {
+  background: color-mix(in srgb, var(--c-fitness) 14%, transparent);
+  color: var(--text-2);
+}
+
+.pillLate {
+  outline: 1px solid var(--danger);
+}
+
+.pillLateText {
+  color: var(--danger) !important;
+  font-weight: 600;
+}
+
+.pillOn {
+  outline: 2px solid var(--c-media);
+}
+
+/* ── 详情抽屉 ─────────────────────────────────────────────────── */
+
+.drawerWrap {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+}
+
+.drawerMask {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 24, 40, 0.24);
+  animation: fadeIn 0.14s ease;
+}
+
+.drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(440px, 100%);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elev);
+  box-shadow: -8px 0 28px rgba(16, 24, 40, 0.16);
+  animation: slideIn 0.16s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(16px);
+    opacity: 0.6;
+  }
+}
+
+.drawerHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid var(--border);
+}
+
+.drawerStatus {
+  font-size: 11px;
+  color: var(--c-media);
+  font-weight: 700;
+}
+
+.drawerTitle {
+  font-size: 15px;
+  margin-top: 2px;
+  line-height: 1.35;
+}
+
+.drawerBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sp-4) var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  flex: 1;
+}
+
+.field > span {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.fieldRow {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.textarea {
+  min-height: 74px;
+  padding: 8px 10px;
+  line-height: 1.5;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.section {
+  padding-top: var(--sp-2);
+  border-top: 1px dashed var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.sectionTitle {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.ratings {
+  display: flex;
+  gap: 5px;
+}
+
+.ratingBtn {
+  height: 25px;
+  padding: 0 12px;
+  border-radius: var(--r-full);
+  background: var(--bg-sub);
+  font-size: 11.5px;
+  color: var(--text-2);
+}
+
+.ratingOn {
+  background: var(--c-media);
+  color: #fff;
+  font-weight: 600;
+}
+
+.drawerFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-5);
+  border-top: 1px solid var(--border);
+}
+
+.drawerDone {
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+
+/* ---------- 发布数据图表 ---------- */
+
+.chartCard {
+  /* 预留：图表卡不需要额外覆盖，沿用 Card 的毛玻璃即可 */
+}
+
+.chartEmpty {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+  line-height: 1.7;
+  padding: var(--sp-2) 0;
+}
+
+.chartSummary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-4);
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+}
+
+.chartSummary b {
+  color: var(--text);
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 3px;
+}
+
+.chart {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: var(--sp-3);
+  height: 200px;
+  padding: var(--sp-2) var(--sp-1) 0;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.chartCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.chartValue {
+  flex: none;
+  height: 16px;
+  font-size: 11px;
+  line-height: 16px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.chartBarWrap {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 0;
+}
+
+.chartBar {
+  width: 64%;
+  max-width: 52px;
+  border-radius: 8px 8px 3px 3px;
+  background: linear-gradient(
+    180deg,
+    var(--c-media),
+    color-mix(in srgb, var(--c-media) 40%, transparent)
+  );
+  box-shadow: 0 0 14px color-mix(in srgb, var(--c-media) 30%, transparent);
+  transition: height 0.5s var(--ease-spring);
+}
+
+.chartBarZero {
+  background: var(--glass-bg-soft);
+  box-shadow: none;
+}
+
+.chartLabel {
+  flex: none;
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+  white-space: nowrap;
+}

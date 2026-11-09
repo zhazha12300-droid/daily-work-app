@@ -1,0 +1,361 @@
+.backupHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.backupLabel {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+}
+
+.backupValue {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.stale {
+  color: var(--warn);
+}
+
+.backupHint {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.actions {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.note {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+  line-height: 1.65;
+}
+
+.counts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--sp-2) var(--sp-4);
+}
+
+.countItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  padding: 5px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+}
+
+.countItem:last-child {
+  border-bottom: 0;
+}
+
+.timerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+
+.timerOn {
+  font-family: var(--font-num);
+  font-size: 16px;
+  color: var(--ok);
+}
+
+.timerOff {
+  font-size: var(--fs-body);
+  color: var(--text-3);
+}
+
+.dangerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+
+.dangerText {
+  color: var(--danger);
+}
+
+.daysHint {
+  margin-left: 6px;
+  font-size: var(--fs-aux);
+  font-weight: 400;
+  color: var(--text-3);
+}
+
+/* ---------- 偏好设置 ---------- */
+
+.prefRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-3) 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.prefRow:first-child {
+  padding-top: 0;
+}
+
+.prefLabel {
+  /* 让说明文字占满剩余宽度并允许换行；没有 flex:1 时右侧控件一旦变宽就会把它挤成一列 */
+  flex: 1;
+  min-width: 0;
+}
+
+.prefLabel p:first-child {
+  font-size: var(--fs-body);
+  color: var(--text);
+}
+
+.prefLabel .note {
+  margin-top: 2px;
+  max-width: 44ch;
+}
+
+.prefInput {
+  /* 关键：用非 auto 的 flex-basis 定宽。它直接压过全局 .input 的 width: 100%，
+     否则 select 会撑满整行，把左边「每周从哪天开始……」的说明挤成一列竖排文字。 */
+  flex: 0 0 108px;
+  width: 108px;
+  min-width: 0;
+}
+
+.kcalBox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+}
+
+.unit {
+  font-size: var(--fs-aux);
+  color: var(--text-3);
+}
+
+.seg {
+  display: inline-flex;
+  padding: 2px;
+  gap: 2px;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--bg-sub);
+  flex: none;
+}
+
+.segBtn {
+  border: 0;
+  background: transparent;
+  color: var(--text-2);
+  font-size: var(--fs-aux);
+  padding: 4px 14px;
+  border-radius: calc(var(--r) - 2px);
+  cursor: pointer;
+}
+
+.segOn {
+  background: var(--bg-elev);
+  color: var(--text);
+  box-shadow: var(--shadow-1);
+}
+
+.prefBlock {
+  padding: var(--sp-3) 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.prefBlock:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.prefBlock > p:first-child {
+  font-size: var(--fs-body);
+  color: var(--text);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--sp-2);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 4px 3px 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-elev);
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+}
+
+.chipX {
+  border: 0;
+  background: transparent;
+  color: var(--text-3);
+  font-size: 13px;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.chipX:hover {
+  color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.chipAdd {
+  display: flex;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+  max-width: 380px;
+}
+
+.chipAdd input {
+  flex: 1;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--sp-2);
+  max-width: 380px;
+}
+
+.cardRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  padding: 5px 8px;
+  border-radius: var(--r-sm);
+}
+
+.cardRow:hover {
+  background: var(--bg-sub);
+}
+
+.cardCheck {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-aux);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.cardOff {
+  color: var(--text-3);
+  text-decoration: line-through;
+}
+
+.cardTools {
+  display: flex;
+  gap: 2px;
+}
+
+.moveBtn {
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--bg-elev);
+  color: var(--text-2);
+  font-size: 11px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.moveBtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.moveBtn:not(:disabled):hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+/* ---------- 数据概览 ---------- */
+
+.overviewHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding-bottom: var(--sp-2);
+  font-size: var(--fs-aux);
+  color: var(--text-2);
+}
+
+.overviewSize {
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.countRight {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.countBytes {
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+}
+
+/* ---------- 危险区 ---------- */
+
+.dangerBlock {
+  padding: var(--sp-3) 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.dangerBlock:first-child {
+  padding-top: 0;
+}
+
+.dangerBlock:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.dangerBlock > div:first-child p:first-child {
+  font-size: var(--fs-body);
+  color: var(--text);
+}
+
+.clearRow {
+  display: flex;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.select {
+  min-width: 200px;
+  flex: 1;
+  max-width: 320px;
+}
